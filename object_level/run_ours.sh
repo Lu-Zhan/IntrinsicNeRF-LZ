@@ -10,8 +10,7 @@ dataset_path=/home/space/projects_backup/intrieve_data/data/rendered_gsir_data/b
 # CUDA_VISIBLE_DEVICES=0 nohup python run_nerf.py --config configs/drums.txt --exp drums --datadir YourData_Dir/drums > logs/drums/out_message 2>&1 &
 
 mkdir logs/ficus
-touch logs/ficus/out_message
-CUDA_VISIBLE_DEVICES=1 python run_nerf.py --config configs/ficus.txt --exp ficus --datadir ${dataset_path}/ficus # > logs/ficus/out_message 2>&1 &
+CUDA_VISIBLE_DEVICES=1 python run_nerf.py --config configs/ficus.txt --exp ficus --datadir ${dataset_path}/ficus --render_only --render_test --testskip 1
 
 
 # mkdir logs/lego
