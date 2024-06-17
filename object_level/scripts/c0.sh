@@ -1,16 +1,16 @@
 device=0
 
-dataset_dir=/home/home/ccnt_zq/lz/Projects/intrieve/data/rendered_gsir_data
+dataset_dir=/home/home/ccnt_zq/lz/Projects/intrieve/data/real_scene
 
-data_type="blur_data_ldr"
+data_type="real_data"
 
-dataset_name=ficus
+dataset_name=new_dog
 mkdir logs/${data_type}_${dataset_name}
 CUDA_VISIBLE_DEVICES=${device} python run_nerf.py --config configs/${dataset_name}.txt --exp ${data_type}_${dataset_name} --datadir ${dataset_dir}/${data_type}/${dataset_name} --render_only --render_test --testskip 1
 
-dataset_name=lego
-mkdir logs/${data_type}_${dataset_name}
-CUDA_VISIBLE_DEVICES=${device} python run_nerf.py --config configs/${dataset_name}.txt --exp ${data_type}_${dataset_name} --datadir ${dataset_dir}/${data_type}/${dataset_name} --render_only --render_test --testskip 1
+# dataset_name=lego
+# mkdir logs/${data_type}_${dataset_name}
+# CUDA_VISIBLE_DEVICES=${device} python run_nerf.py --config configs/${dataset_name}.txt --exp ${data_type}_${dataset_name} --datadir ${dataset_dir}/${data_type}/${dataset_name} --render_only --render_test --testskip 1
 
 # dataset_name=chair
 # mkdir logs/${data_type}_${dataset_name}
